@@ -1,0 +1,14 @@
+{
+  "name": "Project",
+  "version": "1.0.0",
+  "description": "DB",
+  "main": "index.js",
+  "author": "Lucas Vidotto",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "http": "^0.0.1-security",
+    "mysql2": "^2.3.2"
+  }
+}
