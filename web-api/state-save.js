@@ -15,7 +15,7 @@ app.get('/', (req, res, next) => {
 const cadastros = [];
 app.post('/cadastro', (req, res, next) => { 
     console.log("Cadastro recebido!");
-    //salva no banco de dados
+
     cadastros.push({
         nome: req.body.txtNome, 
         email: req.body.txtEmail,
@@ -23,6 +23,7 @@ app.post('/cadastro', (req, res, next) => {
         genero: req.body.txtGenero,
         
     });
+
     res.json({message: "Tudo ok por aqui!", dados: cadastros});
 }) 
 

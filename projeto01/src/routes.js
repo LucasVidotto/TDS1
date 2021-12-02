@@ -6,6 +6,7 @@ import Footer from "./Components/Footer/index";
 
 import SignIn from "./Components/Singin/index";
 import SignUp from "./Components/Singup/Form";
+import HeadersForm from './Components/FormTwo/index'
 
 import "./App.css";
 
@@ -19,11 +20,12 @@ class App extends Component {
           <main className="content">
             <Route exact path="/" component={SignIn} />
             <Route exact path="/cadastrar" component={SignUp} />
+            <Route exact path="/formulario" component={HeadersForm} />
           </main>
-
           <Footer />
         </div>
       </Router>
+
     );
   }
 }

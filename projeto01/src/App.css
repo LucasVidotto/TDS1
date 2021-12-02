@@ -102,6 +102,12 @@
   .title {
     font-size: 25px;
     color: var(--primary-blue-color);
+    text-align: center;
+  }
+  .subtitle{
+    font-size: 25px;
+    
+    text-align: center;
   }
   
   .wrapper {

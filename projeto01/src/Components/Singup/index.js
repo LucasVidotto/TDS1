@@ -4,6 +4,14 @@ import "./index.css";
 import "../../App.css";
 import axios from 'axios';
 
+import { 
+  Stack,
+  Input,
+  Text,
+  Heading,
+  Select,
+
+} from "@chakra-ui/react"
 
 function SignUp() {
     const[estados, setEstados] = useState([]);
@@ -39,79 +47,79 @@ function SignUp() {
       <Fragment>
         <HeaderAction />
         <section className="block">
-          <div className="wrapper">
+          <Stack className="wrapper">
             <h2 className="title">Sobre você</h2>
 
             
             <form onSubmit={handleFormSubmit} className="section-sign-in">
-              <div className="form-group form-icon">
-                <label className="form-label">Nome completo</label>
+              <Stack className="form-group form-icon">
+                <Text className="form-label">Nome completo</Text>
                 
-                <input type="text" name="txtNome" id="txtNome" className="form-input" placeholder="Insira seu nome" onChange={handleInputChange}/>
-              </div>
-              <div className="form-group">
-                <label className="form-label">E-mail</label>
-                <input type="text" name="txtEmail" id="txtEmail" className="form-input" placeholder="Insira o seu e-mail" onChange={handleInputChange}/>
-              </div>
-              <div className="form-group">
-                <label className="form-label">Celular</label>
-                <input type="phone" name="txtPhone" id="txtPhone"className="form-input" placeholder="Insira o número com o DDD" onChange={handleInputChange}/>
-              </div>
-              <div className="form-group">
-                <label className="form-label">Gênero</label>
-                <select name="txtGenero" id="txtGenero" className="form-input"onChange={handleInputChange}>
+                <Input type="text" name="txtNome" id="txtNome" className="form-input" placeholder="Insira seu nome" onChange={handleInputChange}/>
+              </Stack>
+              <Stack className="form-group">
+                <Text className="form-label">E-mail</Text>
+                <Input type="text" name="txtEmail" id="txtEmail" className="form-input" placeholder="Insira o seu e-mail" onChange={handleInputChange}/>
+              </Stack>
+              <Stack className="form-group">
+                <Text className="form-label">Celular</Text>
+                <Input type="phone" name="txtPhone" id="txtPhone"className="form-input" placeholder="Insira o número com o DDD" onChange={handleInputChange}/>
+              </Stack>
+              <Stack className="form-group">
+                <Text className="form-label">Gênero</Text>
+                <Select name="txtGenero" id="txtGenero" className="form-input"onChange={handleInputChange}>
                   <option value="0">Selecione uma opção</option>
                     {estados.map(estado => (<option key={estado.id} value={estado.id}>{estado.genero}</option>))}
-                </select>
-              </div>
-              <div className="form-group">
-                <label className="form-label">Nascimento</label>
-                <input type="text" className="form-input" placeholder="Insira a data" />
-              </div>
-              <div className="form-group">
-                <label className="form-label">Escolaridade</label>
+                </Select>
+              </Stack>
+              <Stack className="form-group">
+                <Text className="form-label">Nascimento</Text>
+                <Input type="text" className="form-input" placeholder="Insira a data" />
+              </Stack>
+              <Stack className="form-group">
+                <Text className="form-label">Escolaridade</Text>
                 
-              </div>
-              <div className="form-group">
-                <label className="form-label">CEP</label>
-                <input type="text" className="form-input" placeholder="Insira seu CEP" />
-              </div>
-              <label className="form-checkbox">
-                <input type="checkbox" />
+              </Stack>
+              <Stack className="form-group">
+                <Text className="form-label">CEP</Text>
+                <Input type="text" className="form-input" placeholder="Insira seu CEP" />
+              </Stack>
+              <Text className="form-checkbox">
+                <Input type="checkbox" />
                 Sou uma pessoa com deficiência
-              </label>
+              </Text>
             </form>
-          </div>
+          </Stack>
         </section>
         <section className="block">
-          <div className="wrapper">
-            <h2 className="title">Sua senha </h2>
+          <Stack className="wrapper">
+            <Heading as="h2" className="title">Sua senha </Heading>
             <p>A senha deve possuir no mínimo 6 caracteres</p>
             <form className="section-sign-in">
-              <div className="form-group form-icon">
-                <label className="form-label">Crie uma nova senha</label>
+              <Stack className="form-group form-icon">
+                <Text className="form-label">Crie uma nova senha</Text>
                 <i className="icon icon-locker" />
                 <button type="button" className="btn-show-password">
                   mostrar
                 </button>
-                <input type="text" className="form-input form-icon-lock" placeholder="Insira uma nova senha" />
-              </div>
-              <div className="form-group form-icon">
-                <label className="form-label">Repita a senha criada</label>
+                <Input type="text" className="form-input form-icon-lock" placeholder="Insira uma nova senha" />
+              </Stack>
+              <Stack className="form-group form-icon">
+                <Text className="form-label">Repita a senha criada</Text>
                 <i className="icon icon-locker" />
                 <button type="button" className="btn-show-password">
                   mostrar
                 </button>
-                <input type="text" className="form-input form-icon-lock" placeholder="Insira a nova senha criada" />
-              </div>
-              <label className="form-checkbox">
-                <input type="checkbox" />
+                <Input type="text" className="form-input form-icon-lock" placeholder="Insira a nova senha criada" />
+              </Stack>
+              <Text className="form-checkbox">
+                <Input type="checkbox" />
                 Concordo com os termos de uso
-              </label>
+              </Text>
               
-              <input type="submit" value="Salvar" />
+              <Input type="submit" value="Salvar" />
             </form>
-          </div>
+          </Stack>
         </section>
       </Fragment>
     );

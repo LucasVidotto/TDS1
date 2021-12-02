@@ -8,7 +8,9 @@ import {
     Stack,
     Input,
     Text,
-
+    Heading,
+    Select,
+    FormLabel,
  } from "@chakra-ui/react"
 
 function Form(){
@@ -30,7 +32,7 @@ function Form(){
         txtNome: '',
         txtIdade: 0,
         txtEmail: '',
-        txtGenero: ""
+        txtGenero: "",
     });
     function handleInputChange(event){
         campos[event.target.name] = event.target.value;
@@ -38,16 +40,17 @@ function Form(){
     }
     
     return (
-        <div>
+        
+        <Stack>
             <HeaderAction />
             <section className="block">
                 <Stack className="wrapper">
-                    <h2 className="title">Sobre você</h2>
+                    <Heading as="h2" className="title">Sobre você</Heading>
                     <form onSubmit={handleFormSubmit} className="section-sign-in">
                         <Stack>
-                            <legend>
-                                <h2>Dados de Cadastro</h2>
-                            </legend>
+                            <FormLabel as ="legend">
+                                <Heading as="h2">Dados de Cadastro</Heading>
+                            </FormLabel>
 
                             <Stack className="form-group form-icon">
                                 <Text className="form-label">Nome Completo:
@@ -70,31 +73,31 @@ function Form(){
                             
                             <Stack className="form-group form-icon">
                                 <Text className="form-label">Gênero:
-                                    <select name="txtGenero" id="txtGenero" className="form-input"onChange={handleInputChange}>
+                                    <Select name="txtGenero" id="txtGenero" className="form-input"onChange={handleInputChange}>
                                         <option value="0">Selecione uma opção</option>
                                             {estados.map(estado => (<option key={estado.id} value={estado.id}>{estado.genero}</option>))}
-                                    </select>
+                                    </Select>
                                 </Text>
                             </Stack>
 
-                            <Stack>
-                                <Text className="form-group form-icon">Nome de Usuário:
+                            <Stack className="form-group form-icon">
+                                <Text className="form-label">Nome de Usuário:
                                 <Input type="text" name="txtLogin" id="txtLogin" className="form-input" placeholder="Your User Name" onChange={handleInputChange} />
                                 </Text>
                             </Stack>
 
-                            <Stack>
-                                <Text className="form-group form-icon">Senha:
+                            <Stack className="form-group form-icon">
+                                <Text className="form-label">Senha:
                                 <Input type="password" name="txtPass" id="txtPass" className="form-input"placeholder="Your Password"onChange={handleInputChange} />
                                 </Text>
                             </Stack>
-                            <input type="submit" value="Salvar" />
+                            <Input type="submit" value="Salvar" />
                         </Stack>
                     </form>
                 </Stack>
                 
             </section>
-            </div>
+        </Stack>
     )
 }
 
